@@ -72,8 +72,8 @@ public class RechargeService {
 		
 		compteOperateur.setSolde(compteOperateur.getSolde() + recharge.getSommeRecu());
 		
-		compteService.updateCompte(compteClient.getId(), compteClient);
-		compteService.updateCompte(compteOperateur.getId(), compteOperateur);
+		compteService.rep.save(compteClient);
+		compteService.rep.save(compteOperateur);
 //		
 //		Twilio.init("","");
 //		Message message = Message.creator(

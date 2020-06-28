@@ -1361,3 +1361,7 @@ java.io.FileNotFoundException: C:\Users\DELL\Desktop\ensa-back-master\src\main\r
 2020-06-28 20:34:26,820 INFO com.backend.EnsaBackApplication [main] Started EnsaBackApplication in 7.214 seconds (JVM running for 7.765)
 2020-06-28 20:35:29,184 DEBUG com.backend.services.CompteService [http-nio-8081-exec-1] L'agent ATLAS Abdelghafour ayant le Username atlass a créé le compte: 78642915976969011258 au client avec le Username ichahane
 2020-06-28 20:35:36,130 DEBUG com.backend.services.CompteService [http-nio-8081-exec-6] L'agent ATLAS Abdelghafour ayant le Username atlass a téléchargé le fichier compte_78642915976969011258_2020-06-28T20-35-28.761.pdf à la date: 2020-06-28T20:35:36.130
+2020-06-28 20:48:34,716 DEBUG com.backend.services.CompteService [http-nio-8081-exec-10] L'agent ATLAS Abdelghafour ayant le Username atlass a téléchargé le fichier compte_78642915976969011258_2020-06-28T20-35-28.761.pdf à la date: 2020-06-28T20:48:34.716
+2020-06-28 21:43:32,317 INFO com.backend.EnsaBackApplication [main] Starting EnsaBackApplication on DESKTOP-ADCT58V with PID 31420 (C:\Users\DELL\eclipse-workspace\ensa-back\target\classes started by DELL in C:\Users\DELL\eclipse-workspace\ensa-back)
+2020-06-28 21:43:32,320 DEBUG com.backend.EnsaBackApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-06-28 21:43:32,321 INFO com.backend.EnsaBackApplication [main] No active profile set, falling back to default profiles: default

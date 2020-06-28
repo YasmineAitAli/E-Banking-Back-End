@@ -93,7 +93,7 @@ public class OperationService {
 			
 		}		
 		
-		compteService.updateCompte(compte.getId(), compte);
+		compteService.rep.save(compte);
 		
 		recuService.CreateRecu(operation);
 		
