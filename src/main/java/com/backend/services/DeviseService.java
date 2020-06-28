@@ -110,7 +110,7 @@ public class DeviseService {
 		Devise updated = rep.findByCode(code).orElseThrow(() -> new NotFoundException("Aucune devise avec le code "+code+" n'est trouvée") );	
 		
 		//vérifier si les données saisies respectent l'unicité du code
-				if(rep.findByCode(devise.getCode()).isPresent())
+				if(rep.findByCode(devise.getCode()).isPresent() && !(rep.findByCode(devise.getCode()).get()!=updated))
 				{
 					throw new AlreadyExistsException("Une devise avec le code "+devise.getCode()+" existe déjà");
 				}

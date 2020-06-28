@@ -79,7 +79,7 @@ public class RechargeService {
 //		Message message = Message.creator(
 //		    new PhoneNumber("+212642330266"),
 //		    new PhoneNumber("+212636196050"),
-//		    "Sample Twilio SMS using Java")
+//		    "Vous avez effectué une recharge")
 //		.create();
 		
 

@@ -1365,3 +1365,4 @@ java.io.FileNotFoundException: C:\Users\DELL\Desktop\ensa-back-master\src\main\r
 2020-06-28 21:43:32,317 INFO com.backend.EnsaBackApplication [main] Starting EnsaBackApplication on DESKTOP-ADCT58V with PID 31420 (C:\Users\DELL\eclipse-workspace\ensa-back\target\classes started by DELL in C:\Users\DELL\eclipse-workspace\ensa-back)
 2020-06-28 21:43:32,320 DEBUG com.backend.EnsaBackApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
 2020-06-28 21:43:32,321 INFO com.backend.EnsaBackApplication [main] No active profile set, falling back to default profiles: default
+2020-06-28 21:43:39,759 INFO com.backend.EnsaBackApplication [main] Started EnsaBackApplication in 7.787 seconds (JVM running for 8.305)
