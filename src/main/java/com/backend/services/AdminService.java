@@ -105,6 +105,10 @@ public class AdminService {
 		
 		rep.save(updated);
 		
+		if(admin.getPassword()!=null && !admin.getPassword().isEmpty()) updated.setPassword(admin.getPassword());
+		else updated.setPassword(null);
+		emailService.sendAuthenticationInfos(updated);
+		
 		Admin user = getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 		logger.debug("L'administrateur "+user.getNom()+" "+user.getPrenom()+" ayant le Username "+user.getUsername()+" a modifié l'administrateur avec le username "+updated.getUsername());
 		

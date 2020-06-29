@@ -56,8 +56,13 @@ public class RechargeService {
 	{
 		
 		Compte compteClient = compteService.getComptes(recharge.getCompte().getId()).get(0);
-		
+
 		Client client = clientService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+		Client proprietaire = clientService.getClients(compteClient.getProprietaire().getId()).get(0);
+		
+		if(client != proprietaire) throw new Exception("Ce compte ne vous appartient pas !");
+				
+				
 		
 		Operateur operateur = operateurService.getOperateurs(recharge.getOperateur().getId()).get(0);
 		Compte compteOperateur = compteService.getComptes(operateur.getComptes().get(0).getId()).get(0);

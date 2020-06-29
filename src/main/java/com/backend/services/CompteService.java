@@ -135,7 +135,7 @@ public class CompteService {
 		Compte compte= rep.findById(id).orElseThrow(() -> new NotFoundException("Aucun compte avec l'id "+id+" trouvé"));
 
 		List<Operation> operations = compte.getOperations();
-		if(operations.isEmpty()) throw new NotFoundException("Aucune recharge effectutée");
+		if(operations.isEmpty()) throw new NotFoundException("Aucune opérartion effectutée");
 
 		return operations;
 	}

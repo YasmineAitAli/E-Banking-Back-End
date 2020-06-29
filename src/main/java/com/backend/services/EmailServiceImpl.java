@@ -26,12 +26,16 @@ public class EmailServiceImpl{
         
         SimpleMailMessage message = new SimpleMailMessage(); 
         message.setTo(utilisateur.getEmail()); 
-        message.setSubject("Nom d'utilisateur et mot de passe"); 
+        message.setSubject("Nom d'utilisateur et mot de passe");
+        
+        String password = utilisateur.getPassword();
+				if(password==null || password.isEmpty()) password = "(Votre mot de passe n'est pas changé)";
+		
         message.setText(
         		"Cher "+utilisateur.getRole()+", \n"
         		+"Vous trouvez ci-dessous vos coordonnées d'identification dans notre application :\n"
         		+"\nUsername : "+utilisateur.getUsername()
-        		+"\nPassword : "+utilisateur.getPassword()
+        		+"\nPassword : "+password
         		+"\nCordialement."
         		);
         emailSender.send(message);

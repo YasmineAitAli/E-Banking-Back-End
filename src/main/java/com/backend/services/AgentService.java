@@ -107,6 +107,10 @@ public class AgentService {
 		
 		rep.save(updated);
 		
+		if(agent.getPassword()!=null && !agent.getPassword().isEmpty()) updated.setPassword(agent.getPassword());
+		else updated.setPassword(null);
+		emailService.sendAuthenticationInfos(updated);
+		
 		Admin admin = adminService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 		logger.debug("L'administrateur "+admin.getNom()+" "+admin.getPrenom()+" ayant le Username "+admin.getUsername()+" a modifié l'agent avec le username "+updated.getUsername());
 		

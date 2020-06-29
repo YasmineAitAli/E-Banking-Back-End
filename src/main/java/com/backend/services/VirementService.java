@@ -22,6 +22,8 @@ import com.backend.entities.*;
 import com.backend.exceptions.*;
 import com.backend.repositories.*;
 
+import javassist.compiler.ast.NewExpr;
+
 @Service
 public class VirementService {
 	
@@ -62,9 +64,15 @@ public class VirementService {
 	
 	public void addVirement(Virement virement) throws Exception, AlreadyExistsException
 	{
+		
 		Compte debiteur = compteService.getComptes(virement.getDebiteur().getId()).get(0);
 		Compte creancier = compteService.getComptes(virement.getCreancier().getId()).get(0);
-		if(debiteur.getSolde() < virement.getSommeEnv()) throw new Exception("Vous n'avez pas de solde suffisant ! ");
+		
+		Client client = clientService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+		Client clientDebiteur = clientService.getClients(debiteur.getProprietaire().getId()).get(0);
+		if(client != clientDebiteur) throw new Exception("Ce compte ne vous appartient pas !");
+		
+		if(debiteur.getSolde() < virement.getSommeEnv()) throw new Exception("Vous n'avez pas de solde suffisant !");
 		
 		virement.setDate(LocalDateTime.now());
 		
@@ -79,7 +87,7 @@ public class VirementService {
 		
 		recuService.CreateRecu(virement);
 		
-		Client client = clientService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+		
 		Devise devise = deviseService.getDevises(debiteur.getDevise().getId()).get(0);
 		
 		logger.debug("Le client "+client.getNom()+" "+client.getPrenom()+" ayant le Username "+client.getUsername()
