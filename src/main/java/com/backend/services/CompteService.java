@@ -203,8 +203,8 @@ public class CompteService {
 	{
 		Compte compte = getComptes(id).get(0);
 		
-		String fileName = "compte_"+compte.getNumero()+"_"+compte.getCreationDate().toString().replace(':', '-')+".pdf";
-		
+		String fileName = "compte_"+compte.getNumero()+"_"+compte.getCreationDate().withNano(0).toString().replace(':', '-')+".pdf";
+		System.out.println("Download : " + fileName);
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		
 		PathResource pdfFile = new PathResource(path+"\\src\\main\\resources\\contrats\\"+fileName);
