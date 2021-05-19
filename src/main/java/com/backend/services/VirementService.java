@@ -103,7 +103,7 @@ public class VirementService {
 		Virement virement = getVirements(id).get(0);
 		Compte debiteur = compteService.getComptes(virement.getDebiteur().getId()).get(0);
 		
-		String fileName = "virement_"+debiteur.getNumero()+"_"+virement.getDate().toString().replace(':', '-')+".pdf";
+		String fileName = "virement_"+debiteur.getNumero()+"_"+virement.getDate().withNano(0).toString().replace(':', '-')+".pdf";
 		
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		

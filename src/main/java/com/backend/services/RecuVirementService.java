@@ -110,7 +110,7 @@ public class RecuVirementService {
 		
 		Document document= new Document();
 		PdfWriter.getInstance(document, new FileOutputStream
-		(path2+"\\src\\main\\resources\\recu\\recu-virement\\virement_"+debiteur.getNumero()+"_"+date.toString().replace(':', '-')+".pdf"));
+		(path2+"\\src\\main\\resources\\recu\\recu-virement\\virement_"+debiteur.getNumero()+"_"+date.withNano(0).toString().replace(':', '-')+".pdf"));
 		
 		document.open();
 		

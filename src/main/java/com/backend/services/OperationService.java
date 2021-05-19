@@ -111,7 +111,7 @@ public class OperationService {
 		Operation operation = getOperations(id).get(0);
 		Compte compte = compteService.getComptes(operation.getCompte().getId()).get(0);
 		
-		String fileName = operation.getType()+"_"+compte.getNumero()+"_"+operation.getDate().toString().replace(':', '-')+".pdf";
+		String fileName = operation.getType()+"_"+compte.getNumero()+"_"+operation.getDate().withNano(0).toString().replace(':', '-')+".pdf";
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		
 		PathResource pdfFile = new PathResource(path+"\\src\\main\\resources\\recu\\recu-operation\\"+fileName);
