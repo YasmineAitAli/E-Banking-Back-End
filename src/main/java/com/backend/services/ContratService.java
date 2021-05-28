@@ -121,8 +121,7 @@ public void createContrat(Compte compte, Client client) throws  DocumentExceptio
 	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 	
 	Document document= new Document();
-	PdfWriter.getInstance(document, new FileOutputStream
-	(path+"\\src\\main\\resources\\contrats\\compte_"+compte.getNumero()+"_"+date.withNano(0).toString().replace(':', '-')+".pdf"));
+	PdfWriter.getInstance(document, new FileOutputStream(path+"\\src\\main\\resources\\contrats\\compte_"+compte.getNumero()+"_"+date.withNano(0).toString().replace(':', '-')+".pdf"));
 	System.out.println("creation : compte_"+compte.getNumero()+"_"+date.withNano(0).toString().replace(':', '-')+".pdf");
 	document.open();
 	
